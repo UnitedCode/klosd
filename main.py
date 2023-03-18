@@ -36,7 +36,8 @@ class Main():
             2: makeMostlyOpenNoise,
             3: makeOpenNoise
         }
-        quadrantNoiseDict[self.currentQuadrant]
+        
+        quadrantNoiseDict[self.currentQuadrant - 1]()
 
     # return an int based on the closest fraction out of 4
     def getCurrentQuadrant(self):
@@ -51,7 +52,7 @@ class Main():
         else:
             return 4
 
-    def startCountdown(self, seconds, callback):
+    def startCountdown(seconds, callback):
         timer = threading.Timer(seconds, callback)
         timer.start()
 

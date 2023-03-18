@@ -1,23 +1,23 @@
 from random import randrange
 from device import sound_manager
 
-closedSoundOptions = ['./sounds/oh_dear_you_are_dead.wav']
-slightlyOpenSoundOptions = ['./sounds/oh_dear_you_are_dead.wav']
-mostlyOpenSoundOptions = ['./sounds/oh_dear_you_are_dead.wav']
-openSoundOptions = ['./sounds/oh_dear_you_are_dead.wav']
+closed_sound_options = ['./sounds/oh_dear_you_are_dead.wav']
+slightly_open_sound_options = ['./sounds/oh_dear_you_are_dead.wav']
+mostly_open_sound_options = ['./sounds/oh_dear_you_are_dead.wav']
+open_sound_options = ['./sounds/oh_dear_you_are_dead.wav']
 
-def makeClosedNoise():
-    playRandomSound(closedSoundOptions)
+def make_closed_noise():
+    play_random_sound(closed_sound_options)
 
-def makeSlightlyOpenNoise():
-    playRandomSound(slightlyOpenSoundOptions)
+def make_slightly_open_noise():
+    play_random_sound(slightly_open_sound_options)
 
-def makeMostlyOpenNoise():
-    playRandomSound(mostlyOpenSoundOptions)
+def make_mostly_open_noise():
+    play_random_sound(mostly_open_sound_options)
 
 def makeOpenNoise():
-    playRandomSound(openSoundOptions)
+    play_random_sound(open_sound_options)
 
-def playRandomSound(options):
+def play_random_sound(options):
     sound = randrange(0, len(options))
     sound_manager.play_sound(sound)
