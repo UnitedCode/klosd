@@ -1,58 +1,58 @@
 # Device runs python 3.9.2
-from sounds import makeClosedNoise, makeMostlyOpenNoise, makeOpenNoise, makeSlightlyOpenNoise
+from sounds import make_closed_noise, make_mostly_open_noise, make_open_noise, make_slightly_open_noise
 from device import potentiometer
 import threading
 
 
 class Main():
-    currentQuadrant = 0
-    previousQuadrant = 0
+    current_quadrant = 0
+    previous_quadrant = 0
     timer = None
 
     def run(self):
         while True:
-            self.previousQuadrant = self.currentQuadrant
-            self.currentQuadrant = self.getCurrentQuadrant()
+            self.previous_quadrant = self.current_quadrant
+            self.current_quadrant = self.get_current_quadrant()
 
-            if not self.previousQuadrant == self.currentQuadrant:
-                self.handleQuadrantChange()
+            if not self.previous_quadrant == self.current_quadrant:
+                self.handle_quadrant_change()
 
-    def handleQuadrantChange(self):
+    def handle_quadrant_change(self):
         # We've just moved, fiddle with timers, starting or killing them.
         if self.timer:
             self.timer.cancel()
 
-        self.timer = self.startCountdown(3, self.makeNoise)
+        self.timer = self.start_countdown(3, self.make_noise)
         # start a timer
         # if the timer goes off
         # run the loud code with the quadrant
 
         return
 
-    def makeNoise(self):
-        quadrantNoiseDict = {
-            0: makeClosedNoise,
-            1: makeSlightlyOpenNoise,
-            2: makeMostlyOpenNoise,
-            3: makeOpenNoise
+    def make_noise(self):
+        quadrant_mapping = {
+            0: make_closed_noise,
+            1: make_slightly_open_noise,
+            2: make_mostly_open_noise,
+            3: make_open_noise
         }
         
-        quadrantNoiseDict[self.currentQuadrant - 1]()
+        quadrant_mapping[self.current_quadrant - 1]()
 
     # return an int based on the closest fraction out of 4
-    def getCurrentQuadrant(self):
-        sensorValue = potentiometer.get_value()
+    def get_current_quadrant(self):
+        sensor_value = potentiometer.get_value()
 
-        if sensorValue < 0.25:
+        if sensor_value < 0.25:
             return 1
-        elif sensorValue < 0.5:
+        elif sensor_value < 0.5:
             return 2
-        elif sensorValue < 0.75:
+        elif sensor_value < 0.75:
             return 3
         else:
             return 4
 
-    def startCountdown(seconds, callback):
+    def start_countdown(seconds, callback):
         timer = threading.Timer(seconds, callback)
         timer.start()
 
