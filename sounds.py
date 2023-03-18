@@ -24,5 +24,5 @@ def make_open_noise():
 
 
 def play_random_sound(options):
-    sound = randrange(0, len(options))
+    sound = options[randrange(0, len(options))]
     sound_manager.play_sound(sound)

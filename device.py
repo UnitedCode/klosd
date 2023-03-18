@@ -24,7 +24,7 @@ class Potentiometer:
 
 
 class SoundManager:
-    def play_sound(self, file):
+    def play_sound(self, file: str):
         subprocess.Popen(['aplay', file])
 
 
