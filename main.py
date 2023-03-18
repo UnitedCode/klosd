@@ -51,7 +51,7 @@ class Main():
         else:
             return 4
 
-    def startCountdown(seconds, callback):
+    def startCountdown(self, seconds, callback):
         timer = threading.Timer(seconds, callback)
         timer.start()
 
