@@ -36,7 +36,7 @@ class Main():
             2: make_mostly_open_noise,
             3: make_open_noise
         }
-        
+
         quadrant_mapping[self.current_quadrant - 1]()
 
     # return an int based on the closest fraction out of 4
@@ -52,7 +52,7 @@ class Main():
         else:
             return 4
 
-    def start_countdown(seconds, callback):
+    def start_countdown(self, seconds, callback):
         timer = threading.Timer(seconds, callback)
         timer.start()
 
