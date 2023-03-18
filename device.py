@@ -18,7 +18,7 @@ class Potentiometer:
         value = 0
         for n in range(self._samples):
             value += self._channel.voltage / self._max_voltage
-            time.sleep(0.01)
+            time.sleep(0.02)
 
         return value / self._samples
 
@@ -32,7 +32,3 @@ potentiometer = Potentiometer()
 sound_manager = SoundManager()
 
 sound_manager.play_sound('./sounds/oh_dear_you_are_dead.wav')
-
-while True:
-    print(potentiometer.get_value())
-    time.sleep(0.5)
