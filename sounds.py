@@ -1,10 +1,10 @@
 from random import randrange
 from device import sound_manager
 
-closedSoundOptions = ['/path/note.wav','/path/note2.wav', '/path/note3.wav']
-slightlyOpenSoundOptions = ['/path/note.wav','/path/note2.wav', '/path/note3.wav']
-mostlyOpenSoundOptions = ['/path/note.wav','/path/note2.wav', '/path/note3.wav']
-openSoundOptions = ['/path/note.wav','/path/note2.wav', '/path/note3.wav']
+closedSoundOptions = ['./sounds/oh_dear_you_are_dead.wav']
+slightlyOpenSoundOptions = ['./sounds/oh_dear_you_are_dead.wav']
+mostlyOpenSoundOptions = ['./sounds/oh_dear_you_are_dead.wav']
+openSoundOptions = ['./sounds/oh_dear_you_are_dead.wav']
 
 def makeClosedNoise():
     playRandomSound(closedSoundOptions)
