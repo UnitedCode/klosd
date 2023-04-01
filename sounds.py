@@ -1,10 +1,10 @@
 from random import randrange
 from device import sound_manager
 
-closed_sound_options = ['./sounds/oh_dear_you_are_dead.wav']
-slightly_open_sound_options = ['./sounds/oh_dear_you_are_dead.wav']
-mostly_open_sound_options = ['./sounds/oh_dear_you_are_dead.wav']
-open_sound_options = ['./sounds/oh_dear_you_are_dead.wav']
+closed_sound_options = ['./sounds/PassiveAgressive.wav','./sounds/AAAaaaAAAAaaaaaAAaaAAaaaAaahhhhHHHhh.wav', './sounds/IAmInPain.wav']
+slightly_open_sound_options = ['./sounds/RaisedInABarn.wav', './sounds/LibralSissies.wav', './sounds/ShutMeOutTake.wav']
+mostly_open_sound_options = ['./sounds/stfd.wav', './sounds/WasThatSoHard.wav']
+open_sound_options = ['./sounds/WifeAndKids.wav', './sounds/thx.wav']
 
 
 def make_closed_noise():
